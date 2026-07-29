@@ -1,11 +1,11 @@
-"""Minimal smolagents quick start against Ollama Cloud.
+"""Minimal ToolCallingAgent demo against Ollama Cloud.
 
 Builds an OpenAIModel pointing at the OpenAI-compatible Ollama Cloud
 endpoint, registers one local tool, and runs a ToolCallingAgent on a
 task that should trigger a tool call.
 
 Run manually (consumes API quota):
-    uv run --package smolagent python -m smolagent.quick_start
+    uv run --package smolagent python -m smolagent.tool_calling_agent_demo
 """
 
 from __future__ import annotations

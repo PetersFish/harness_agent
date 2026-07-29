@@ -39,10 +39,11 @@ def test_load_settings_raises_when_api_key_missing():
     }
     with patch.dict(os.environ, env, clear=False):
         os.environ.pop("OLLAMA_API_KEY", None)
-        with pytest.raises(ValueError, match="OLLAMA_API_KEY"):
-            from smolagent.settings import load_settings
+        with patch("smolagent.settings.load_dotenv"):
+            with pytest.raises(ValueError, match="OLLAMA_API_KEY"):
+                from smolagent.settings import load_settings
 
-            load_settings()
+                load_settings()
 
 
 def test_load_settings_raises_when_model_missing():
@@ -51,7 +52,8 @@ def test_load_settings_raises_when_model_missing():
     }
     with patch.dict(os.environ, env, clear=False):
         os.environ.pop("OLLAMA_MODEL", None)
-        with pytest.raises(ValueError, match="OLLAMA_MODEL"):
-            from smolagent.settings import load_settings
+        with patch("smolagent.settings.load_dotenv"):
+            with pytest.raises(ValueError, match="OLLAMA_MODEL"):
+                from smolagent.settings import load_settings
 
-            load_settings()
+                load_settings()

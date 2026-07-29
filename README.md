@@ -4,7 +4,7 @@ Multi-framework agent learning workspace.
 
 ## Structure
 
-- `smolagent/` — smolagents learning subproject (Ollama Cloud, ToolCallingAgent)
+- `smolagent/` — smolagents learning subproject (Ollama Cloud, ToolCallingAgent, CodeAgent)
 - `deepagents/` — (planned) DeepAgents learning subproject
 
 ## Setup
@@ -18,8 +18,11 @@ uv sync
 ## Run
 
 ```bash
-# smolagents quick start
-uv run --package smolagent python -m smolagent.quick_start
+# ToolCallingAgent demo
+uv run --package smolagent python -m smolagent.tool_calling_agent_demo
+
+# CodeAgent demo
+uv run --package smolagent python -m smolagent.code_agent_demo
 
 # tests
 uv run pytest
