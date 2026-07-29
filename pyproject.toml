@@ -1,0 +1,9 @@
+[project]
+name = "harness-agent"
+version = "0.1.0"
+description = "Multi-framework agent learning workspace (smolagents, deepagents, ...)"
+requires-python = ">=3.11"
+dependencies = []
+
+[tool.uv.workspace]
+members = ["smolagent", "deepagents"]
